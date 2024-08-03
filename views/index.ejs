@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Note App</h1>
+            <div class="auth-buttons">
+                <% if (user) { %>
+                    <a href="/auth/logout" class="auth-btn">Logout</a>
+                    <% } else { %>
+                        <a href="/auth/login" class="auth-btn">Login</a>
+                        <a href="/auth/register" class="auth-btn">Register</a>
+                        <% } %>
+            </div>
+        </header>
+        <main>
+            <section class="notes-list">
+                <h2>Notes</h2>
+                <% if (notes.length> 0) { %>
+                    <% notes.forEach(note=> { %>
+                        <div class="note">
+                            <h3>
+                                <%= note.title %>
+                            </h3>
+                            <p>
+                                <%= note.content %>
+                            </p>
+                            <div class="note-actions">
+                                <form action="/notes/delete/<%= note._id %>" method="POST">
+                                    <button type="submit" class="delete-btn">Delete</button>
+                                </form>
+                                <form action="/notes/edit/<%= note._id %>" method="GET">
+                                    <button type="submit" class="edit-btn">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <p>No notes available. Create a new note to get started!</p>
+                                <% } %>
+            </section>
+            <section class="new-note">
+                <a href="/notes/new" class="new-note-btn">Create a New Note</a>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

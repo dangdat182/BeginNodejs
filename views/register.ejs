@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Register</h1>
+            <a href="/auth/login" class="auth-btn">Login</a>
+        </header>
+        <main>
+            <section class="register-form">
+                <form action="/auth/register" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
