@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "dangdat",
   "license": "ISC",
-  "description": "",
+  "description": "first devops",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "beginnodejs": "file:",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
