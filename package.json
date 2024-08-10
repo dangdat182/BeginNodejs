@@ -14,14 +14,17 @@
     "bcryptjs": "^2.4.3",
     "beginnodejs": "file:",
     "body-parser": "^1.20.2",
+    "connect-redis": "^7.1.1",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
+    "ioredis": "^5.4.1",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "redis": "^4.7.0"
   }
 }

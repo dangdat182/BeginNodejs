@@ -21,6 +21,7 @@
                         <a href="/auth/register" class="auth-btn">Register</a>
                         <% } %>
             </div>
+            <button id="dark-mode-toggle" class="mode-toggle-btn">Dark Mode</button>
         </header>
         <main>
             <section class="notes-list">
@@ -53,6 +54,30 @@
             </section>
         </main>
     </div>
+    <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        // Check for saved mode preference
+        if (localStorage.getItem('mode') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = 'Light Mode';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Save mode preference
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+                localStorage.setItem('mode', 'dark');
+            } else {
+                toggleButton.textContent = 'Dark Mode';
+                localStorage.setItem('mode', 'light');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
